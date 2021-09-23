@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="top" id="todo">
+            <h1 class="headingtext">TODO LIST</h1>
+    </div>
+
+
+
+
+    <div class="box" id="heading">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
+
+
+
+    <div class="box" id="tasks">
+        <% for(var i=0; i<newListItem.length ; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= newListItem[i] %>
+                </p>
+                <form class="item" action="/<%= i %>" method="POST">
+                    <button type="submit" name="Delete" id="del">-</button>
+
+                </form>
+            </div>
+            <% } %>
+
+
+                <form class="item" action="/" method="POST">
+                    <input class="inputt" type="text" name="newItem" placeholder="New Item" autocomplete="off" required ">
+            <button type=" submit" name="button" id="add">+</button>
+
+                </form>
+
+    </div>
+
+    <footer>©️Copyright 2021 AmanDeepSingh</footer>
+
+
+
+
+</body>
+
+</html>
